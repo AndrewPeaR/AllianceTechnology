@@ -1,0 +1,17 @@
+.address
+    margin-bottom: 80px
+
+.address__text
+    margin-top: -30px
+    margin-bottom: 30px
+    @include font-styles(18px, 500, 148%, 0, $dark)
+
+.address__map
+    position: relative
+    z-index: 2
+    &::before
+        z-index: -1
+        position: absolute
+        content: url('./../img/svg/map.svg')
+        left: -240px
+        top: -100px

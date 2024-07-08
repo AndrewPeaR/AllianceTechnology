@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Alliance Technology</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="header">
+          <div class="header__logo">
+              <a class="logo" href="index.html">Alliance Technology</a>
+            </div>
+            <nav class="header__nav nav">
+              <ul class="nav__list">
+                <li class="nav__item"><a href="index.html">Главная</a></li>
+                <li class="nav__item"><a href="about.html">О компании</a></li>
+                <li class="nav__item"><a href="vendors.html">Партнеры</a></li>
+                <li class="nav__item"><a class="btn_blue btn_header" href="contacts.html">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="burger">
+              <span></span>
+            </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrapper">
+        <p class="section-description">Кто мы?</p>
+        <h2 class="section-title">Alliance Technology</h2>
+        <div class="about">
+          <p class="about__text">
+            Alliance Technology - это компания, которая специализируется на
+            предоставлении комплексных технологических решений для бизнеса. Мы
+            обладаем богатым опытом работы с различными компаниями, помогая им
+            оптимизировать процессы, повысить эффективность и достичь новых
+            высот. <br /><br />
+            Почему компании доверяют Alliance Technology? <br /><br />
+            • Опытные специалисты: Наша команда состоит из опытных специалистов,
+            обладающих глубокими знаниями в различных областях технологий.
+            <br />
+            • Индивидуальный подход: Мы понимаем, что каждый бизнес уникален,
+            поэтому предлагаем индивидуальные решения, отвечающие конкретным
+            потребностям клиента. <br />
+            • Долгосрочные партнерские отношения: Мы стремимся к долгосрочным
+            отношениям с нашими клиентами, предоставляя им постоянную поддержку
+            и сопровождение. <br />
+            • Проверенные технологии: Мы используем только проверенные и
+            надежные технологии, гарантируя стабильность и эффективность ваших
+            систем. <br />
+            • Ориентация на результат: Наша цель - помочь вам достичь ваших
+            бизнес-целей, используя технологии как инструмент для повышения
+            производительности и оптимизации процессов.<br />
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrapper">
+        <div class="address">
+          <p class="section-description">Где мы находимся?</p>
+          <h2 class="section-title">Наш адрес</h2>
+          <div class="address__text">
+            <b>Индекс</b>: 123557<br>
+            <b>Город</b>: Москва<br>
+            <b>Улица</b>: Климашкина д.21<br>
+          </div>
+          <div class="address__map">
+            <div id="map" style="width: 100%; height: 400px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrapper">
+        <div class="footer">
+          <hr />
+          <div class="footer__items">
+            <div class="footer__item">
+              <a class="logo" href="index.html">Alliance Technology</a>
+            </div>
+            <div class="footer__item">
+              <div class="footer__contacts">
+                <div class="footer__contacts-phone">
+                    <img class="icon-phone" src="./img/phone.svg" alt="phone" /><a href="tel:+79163307386">+7 (916) 330-73-86</a>
+                </div>
+                <div class="footer__contacts-mail">
+                    <img class="icon-email" src="./img/email.svg" alt="email" /><a href="mailto:info@alliance-systems.tech">info@alliance-systems.tech</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- 55.767722, 37.565973 -->
+    <script>
+      document.querySelector(".burger").addEventListener("click", function () {
+        this.classList.toggle("active");
+        document.querySelector(".header__nav").classList.toggle("open");
+        // Блокировка скролла при открытом бургер меню
+        document.querySelector("body").classList.toggle("block-scroll");
+      });
+    </script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=a8a171f0-1d76-426b-9c1f-c6c58d7df875&lang=ru_RU"></script>
+    <script>
+      initMap();
+
+      async function initMap() {
+        // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+        await ymaps3.ready;
+
+        const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+
+        const map = new YMap(document.getElementById("map"), {
+          location: {
+            center: [37.565973, 55.767722],
+            zoom: 17,
+          },
+        });
+
+        const { YMapDefaultMarker } = await ymaps3.import(
+          "@yandex/ymaps3-markers@0.0.1"
+        );
+
+        let marker = new YMapDefaultMarker({
+          coordinates: [37.565973, 55.767722],
+          draggable: false,
+          title: "Адрес: 123557, г.Москва",
+          subtitle: "ул.Климашкина, д.21",
+        });
+
+        map.addChild(new YMapDefaultSchemeLayer());
+        map.addChild(new ymaps3.YMapDefaultFeaturesLayer({ zIndex: 1800 }));
+        map.addChild(marker);
+      }
+    </script>
+  </body>
+</html>

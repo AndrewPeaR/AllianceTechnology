@@ -1,0 +1,73 @@
+.advantages-bg
+    background-color: $main-bg
+    margin-bottom: 80px
+
+.advantages
+    display: flex
+    justify-content: space-between
+    padding-top: 45px
+    padding-bottom: 45px
+    position: relative
+
+    @media (max-width: 850px)
+        flex-direction: column
+
+    &::after
+        position: absolute
+        z-index: 1
+        content: url('./../img/svg/whyme.svg')
+        right: -100px
+        top: 0
+
+        @media (max-width: 1265px)
+            content: ''
+
+.advantages-card
+    position: relative
+    z-index: 2
+    max-width: 350px
+    height: 282px
+    border-radius: 5px
+    border: 1px solid $card-border
+    background-color: $white
+    padding: 40px 0 0 30px
+    box-shadow: 0px 100px 80px 0px rgba(49, 49, 49, 0.10)
+    @include transition
+
+    &:hover
+        border-radius: 10px
+        border: 1px solid $white
+        box-shadow: 0px 100px 80px 0px rgba(49, 49, 49, 0.2)
+
+    @media (max-width: 1130px)
+        max-width: 300px
+        height: 240px
+
+    @media (max-width: 990px)
+        padding: 20px 0 0 15px
+        max-width: 250px
+        height: 190px
+    @media (max-width: 850px)
+        height: auto
+        padding-bottom: 15px
+        margin-bottom: 30px
+        max-width: 100%
+
+.advantages-card__title
+    padding-right: 10px
+    margin-bottom: 5px
+    @include font-styles(22px, 600, normal, -0.5px, $dark)
+
+    @media (max-width: 1130px)
+        font-size: 18px
+    @media (max-width: 990px)
+        font-size: 16px
+
+.advantages-card__desc
+    padding-right: 20px
+    @include font-styles(16px, 400, 150%, -0.2px, $accent)
+
+    @media (max-width: 1130px)
+        font-size: 14px
+    @media (max-width: 990px)
+        font-size: 12px

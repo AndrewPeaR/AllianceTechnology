@@ -1,0 +1,68 @@
+.wrapper
+    max-width: 1170px
+    margin: 0 auto
+
+.ymaps3x0--default-marker__title-wrapper
+    max-width: 240px !important
+
+*
+    font-family: $font-main
+    
+body
+    overflow-x: hidden
+
+.open
+    display: flex !important
+
+.block-scroll
+    overflow: hidden
+
+section
+    padding: 0 30px
+
+.section-title
+    @include font-styles(45px, 500, normal, 0, $dark)
+    text-align: center
+    margin-bottom: 80px
+    @media (max-width: 520px)
+        font-size: 32px
+
+.section-description
+    @include font-styles(18px, 500, normal, 0, $accent)
+    text-align: center
+    margin-bottom: 30px
+    @media (max-width: 520px)
+        font-size: 14px
+
+.main-bg
+    padding-top: 30px
+    padding-bottom: 150px
+    margin-bottom: 100px
+    background-color: $main-bg
+
+.btn_blue
+    display: inline-block
+    border-radius: 5px
+    background-color: $blue
+    padding: 18px 35px
+    color: $white !important
+    box-shadow: 0px 10px 30px 10px rgba(34, 60, 80, 0.15)
+    @include transition
+
+    &:hover
+        box-shadow: 0px 10px 30px 12px rgba(34, 60, 80, 0.25)
+        font-weight: 700
+
+.btn_header
+    @media (max-width: 900px)
+        background-color: $dark
+
+.btn__wrapper
+    text-align: center
+
+.marker-class
+    width: 50px
+    height: 50px
+
+.icon-phone, .icon-email
+    margin-right: 10px

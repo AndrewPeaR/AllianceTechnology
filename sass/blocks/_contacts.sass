@@ -1,0 +1,35 @@
+.contacts
+    max-width: 737px
+    margin: 0 auto
+    position: relative
+    &::after
+        position: absolute
+        content: url('./../img/svg/trust.svg')
+        right: -450px
+        bottom: -160px
+
+    &__item
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 30px
+        @include font-styles(18px, 500, normal, 0, $accent)
+
+.contacts__mobile
+    @media (max-width: 1100px)
+        .section-title
+            font-size: 32px
+        .section-description
+            font-size: 14px
+
+    @media (max-width: 800px)
+        .contacts__item
+            font-size: 14px
+        .section-title
+            font-size: 28px
+
+    @media (max-width: 360px)
+        .contacts__item
+            flex-direction: column
+            p:nth-child(1)
+                margin-bottom: 10px

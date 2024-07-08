@@ -1,0 +1,66 @@
+.main
+    display: flex
+    flex-direction: column
+    text-align: center
+    align-items: center
+    padding: 0 30px
+
+
+    &__title
+        position: relative
+        font-family: Inter
+        @include font-styles(72px, 800, 111%, -3.6px, $dark)
+        margin-bottom: 36px
+        span
+            color: $blue
+
+        @media (max-width: 990px)
+            font-size: 58px
+
+        @media (max-width: 810px)
+            font-size: 46px
+
+        @media (max-width: 430px)
+            font-size: 32px
+            letter-spacing: -1px
+
+        &::before
+            position: absolute
+            content: url('./../img/svg/mainleft.svg')
+            left: -300px
+
+            @media (max-width: 700px)
+                content: ''
+
+        &::after
+            position: absolute
+            content: url('./../img/svg/mainright1.svg')
+            right: -300px
+            top: -70px
+            @media (max-width: 1265px)
+                content: ''
+
+
+    &__text
+        position: relative
+        @include font-styles(18px, 500, 148%, 0, $accent)
+        max-width: 492px
+        margin-bottom: 36px
+
+        @media (max-width: 990px)
+            font-size: 14px
+
+        &::after
+            position: absolute
+            content: url('./../img/svg/mainright2.svg')
+            right: -320px
+            top: 0
+
+            @media (max-width: 1150px)
+                right: -200px
+            @media (max-width: 920px)
+                right: -150px
+            @media (max-width: 810px)
+                right: -100px
+            @media (max-width: 700px)
+                content: ''

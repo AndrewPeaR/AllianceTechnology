@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Alliance Technology</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="header">
+          <div class="header__logo">
+              <a class="logo" href="index.html">Alliance Technology</a>
+            </div>
+            <nav class="header__nav nav">
+              <ul class="nav__list">
+                <li class="nav__item"><a href="index.html">Главная</a></li>
+                <li class="nav__item"><a href="about.html">О компании</a></li>
+                <li class="nav__item"><a href="vendors.html">Партнеры</a></li>
+                <li class="nav__item"><a class="btn_blue btn_header" href="contacts.html">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="burger">
+              <span></span>
+            </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+        <div class="wrapper">
+            <div class="vendors">
+                <p class="section-description">Кто нам доверяет?</p>
+                <h2 class="section-title">Наши вендоры</h2>
+                <div class="vendors__grid">
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard1.png" alt="vendorsCard1"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard2.png" alt="vendorsCard2"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard3.png" alt="vendorsCard3"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard4.png" alt="vendorsCard4"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard5.png" alt="vendorsCard5"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard6.png" alt="vendorsCard6"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard7.png" alt="vendorsCard7" style="width: 195px;"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard8.png" alt="vendorsCard8"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard9.png" alt="vendorsCard9"></a>
+                    <a href="#" class="vendors__item"><img src="./img/vendorsCard10.png" alt="vendorsCard10"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrapper">
+            <div class="trust">
+                <p class="section-description">Почему нам доверяют?</p>
+                <h2 class="section-title">Сотрудничество с Alliance Technology</h2>
+                <ul class="trust__list">
+                    <li class="trust__item">Получение комплексных решений, объединяющих все необходимые элементы для достижения ваших целей.</li>
+                    <li class="trust__item">Доступ к лучшим технологиям и опытным специалистам.</li>
+                    <li class="trust__item">Возможность сфокусироваться на своем бизнесе, передав технические вопросы в руки профессионалов.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+      <div class="wrapper">
+        <div class="footer">
+          <hr />
+          <div class="footer__items">
+            <div class="footer__item">
+              <a class="logo" href="index.html">Alliance Technology</a>
+            </div>
+            <div class="footer__item">
+              <div class="footer__contacts">
+                <div class="footer__contacts-phone">
+                    <img class="icon-phone" src="./img/phone.svg" alt="phone" /><a href="tel:+79163307386">+7 (916) 330-73-86</a>
+                </div>
+                <div class="footer__contacts-mail">
+                    <img class="icon-email" src="./img/email.svg" alt="email" /><a href="mailto:info@alliance-systems.tech">info@alliance-systems.tech</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.querySelector(".burger").addEventListener("click", function () {
+        this.classList.toggle("active");
+        document.querySelector(".header__nav").classList.toggle("open");
+        // Блокировка скролла при открытом бургер меню
+        document.querySelector("body").classList.toggle("block-scroll");
+      });
+    </script>
+  </body>
+</html>

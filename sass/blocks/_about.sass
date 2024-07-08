@@ -1,0 +1,32 @@
+.about
+    margin-bottom: 80px
+
+.about__text
+    @include font-styles(18px, 500, normal, 0, $accent)
+    position: relative
+    &::before
+        position: absolute
+        z-index: 1
+        content: url('./../img/svg/aboutleft.svg')
+        left: -240px
+        top: -100px
+
+    &::after
+        position: absolute
+        z-index: 1
+        content: url('./../img/svg/aboutright.svg')
+        right: -130px
+        top: 360px
+
+        @media (max-width: 1250px)
+            right: -30px
+        @media (max-width: 900px)
+            top: 420px
+        @media (max-width: 830px)
+            top: 500px
+        @media (max-width: 660px)
+            top: 650px
+        @media (max-width: 530px)
+            top: 740px
+        @media (max-width: 460px)
+            display: none

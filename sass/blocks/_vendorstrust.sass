@@ -1,0 +1,62 @@
+.vendors
+    margin-bottom: 120px
+    position: relative
+    &__grid
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        grid-template-rows: 1fr 1fr
+        row-gap: 40px
+        justify-items: center
+
+        @media (max-width: 1150px)
+            grid-template-columns: repeat(4, 1fr)
+            grid-template-rows: 1fr 1fr 1fr
+
+            a:nth-child(9)
+                grid-column-start: 2
+
+            a:nth-child(10)
+                grid-column-start: 3
+
+        @media (max-width: 940px)
+            grid-template-columns: repeat(3, 1fr)
+            grid-template-rows: 1fr 1fr 1fr 1fr
+            gap: 30px
+
+            a:nth-child(9)
+                grid-column-start: auto
+
+            a:nth-child(10)
+                grid-column-start: 2
+
+        @media (max-width: 530px)
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-rows: repeat(5, 1fr)
+
+            a:nth-child(10)
+                grid-column-start: auto
+
+    &::before
+        position: absolute
+        z-index: 1
+        content: url('./../img/svg/vendorsleft.svg')
+        left: -230px
+        top: 0
+
+.trust
+    margin-bottom: 80px
+
+.trust__list
+    list-style: disc
+    padding-left: 25px
+    position: relative
+    &::after
+        position: absolute
+        content: url('./../img/svg/trust.svg')
+        right: -250px
+        bottom: -100px
+
+.trust__item
+    list-style: disc
+    margin-bottom: 5px
+    @include font-styles(18px, 500, 148%, 0, $accent)
